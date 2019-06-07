@@ -1,4 +1,7 @@
 config.yaml
+"config/"
+.idea/*
+db.db
 venv
 testdb.db
 __pycache__

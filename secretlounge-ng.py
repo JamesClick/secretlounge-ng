@@ -36,7 +36,7 @@ def usage():
     print("  -h    Display this text")
     print("  -q    Quiet, set log level to WARNING")
     print("  -d    Debug, set log level to DEBUG")
-    print("  -c    Location of config file (default: ./config.yaml)")
+    print("  -c    Location of config file (default: ./config/config.yaml)")
 
 
 def open_db(config):
@@ -101,7 +101,7 @@ if __name__ == "__main__":
         loglevel = logging.WARNING
     elif readopt("-d") is not None:
         loglevel = logging.DEBUG
-    configpath = "./config.yaml"
+    configpath = "./config/config.yaml"
     if readopt("-c") is not None:
         configpath = readopt("-c")
     # Run the actual program
