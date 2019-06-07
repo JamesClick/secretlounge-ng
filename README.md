@@ -5,10 +5,22 @@ Rewrite of [secretlounge](https://github.com/6697/secretlounge), a bot to make a
 ## Setup
 ```
 $ pip3 install -r requirements.txt
-$ cp config.yaml.example config.yaml
-Edit config.yaml with your favorite text editor.
+$ cp -r config.example/ config/
+$ cp config/config.yaml.example config/config.yaml
+Edit config/config.yaml with your favorite text editor.
 $ ./secretlounge-ng
 ```
+
+## Docker Setup
+(Install docker first)
+```
+$ docker build -t secretlounge-ng .
+$ cp -r config.example/ config/
+$ cp config/config.yaml.example config/config.yaml
+Edit config/config.yaml with your favorite text editor.
+$ docker run -d -v $PWD/config/:/app/config secretlounge-ng
+```
+
 
 ## @BotFather Setup
 Message [@BotFather](https://t.me/BotFather) to configure your bot as follows:
