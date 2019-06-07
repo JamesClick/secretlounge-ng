@@ -13,3 +13,9 @@ action "Docker Registry" {
   needs = ["Build image"]
   secrets = ["DOCKER_USERNAME", "DOCKER_PASSWORD"]
 }
+
+action "Push image" {
+  uses = "actions/docker/cli@8cdf801b322af5f369e00d85e9cf3a7122f49108"
+  needs = ["Docker Registry"]
+  args = "push jamesclick/secretlounge-ng"
+}
